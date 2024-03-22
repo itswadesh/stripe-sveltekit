@@ -14,7 +14,7 @@ export const POST: RequestHandler = async ({ request }) => {
         currency: "USD",
         product_data: {
           name: item.name,
-          images: [],
+          images: [item.img],
         },
         unit_amount: item.price * 100,
       },

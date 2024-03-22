@@ -1,35 +1,38 @@
 <script lang="ts">
-  import { cartItems, addToCart, removeFromCart } from "./cart";
+  import { cartItems, addToCart, removeFromCart } from './cart'
 
   const products = [
     {
       id: 1,
-      name: "Dog",
+      name: 'Dog',
       price: 14.99,
+      img: 'https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       id: 2,
-      name: "Cat",
+      name: 'Cat',
       price: 14.99,
+      img: 'https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       id: 3,
-      name: "Fish",
+      name: 'Fish',
       price: 14.99,
-    },
-  ];
+      img: 'https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+  ]
 
   async function checkout() {
-    const data = await fetch("/checkout", {
-      method: "POST",
+    const data = await fetch('/checkout', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        items: $cartItems,
-      }),
-    }).then((data) => data.json());
-    window.location.replace(data.url);
+        items: $cartItems
+      })
+    }).then((data) => data.json())
+    window.location.replace(data.url)
   }
 </script>
 
